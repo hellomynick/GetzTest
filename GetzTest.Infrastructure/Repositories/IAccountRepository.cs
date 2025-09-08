@@ -11,5 +11,5 @@ public interface IAccountRepository : IBaseRepository<Account>
     public Task<Account?> FindByNameAsync(string name);
     public void SoftDeleted(Account entity);
 
-    public Task<IEnumerable<Account>?> GetAllAsync();
+    public IQueryable<Account> GetAllAsync();
 }

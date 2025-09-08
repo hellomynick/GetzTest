@@ -7,5 +7,5 @@ public interface IAccountQueries
     Task<AccountDto?> GetAccountAsync(Guid id);
     Task<AccountDto?> GetAccountByEmailAsync(string email);
     Task<AccountDto?> GetAccountByNameAsync(string name);
-    Task<IEnumerable<AccountDto>?> GetAccountsAsync();
+    Task<PagedResult<AccountDto>> GetAccountsAsync(int pageNumber, int pageSize);
 }

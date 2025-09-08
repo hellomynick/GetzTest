@@ -1,6 +1,7 @@
 ﻿using GetzTest.Application.Models;
 using GetzTest.Infrastructure;
 using GetzTest.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace GetzTest.Application.CQRS.Queries;
 
@@ -53,11 +54,15 @@ public class AccountQueries : IAccountQueries
         };
     }
 
-    public async Task<IEnumerable<AccountDto>?> GetAccountsAsync()
+    public async Task<PagedResult<AccountDto>> GetAccountsAsync(int pageNumber, int pageSize)
     {
-        var accounts = await _repository.GetAllAsync();
+        var query = _repository.GetAllAsync();
+        int totalItems = await query.CountAsync();
 
-        if (accounts == null) return null;
+        var accounts = await query
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
 
         var accountsDto = new List<AccountDto>();
 
@@ -69,7 +74,13 @@ public class AccountQueries : IAccountQueries
                 Email = account.Email,
             });
         }
-
-        return accountsDto;
+        
+        return new PagedResult<AccountDto>
+        {
+            Items = accountsDto,
+            TotalItems = totalItems,
+            PageNumber = pageNumber,
+            PageSize = pageSize
+        };
     }
 }

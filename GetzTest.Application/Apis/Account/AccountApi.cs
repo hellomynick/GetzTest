@@ -78,10 +78,11 @@ public abstract class AccountApi
         return TypedResults.Problem("Registration failed", statusCode: 500);
     }
 
-    public static async Task<Ok<IEnumerable<AccountDto>>> GetAccountsAsync(
+    public static async Task<Ok<PagedResult<AccountDto>>> GetAccountsAsync(
+        [FromQuery] int pageNumber, [FromQuery] int pageSize,
         [AsParameters] AccountsService accountsService)
     {
-        return TypedResults.Ok(await accountsService.AccountQueries.GetAccountsAsync());
+        return TypedResults.Ok(await accountsService.AccountQueries.GetAccountsAsync(pageNumber, pageSize));
     }
 
     public static async Task<Ok<AccountDto>> GetAccountAsync(
