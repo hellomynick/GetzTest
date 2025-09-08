@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using GetzTest.Application.Behaviors;
 using GetzTest.Application.CQRS.Commands;
+using GetzTest.Application.CQRS.Queries;
 using GetzTest.Application.Jwts;
 using GetzTest.Application.Validators;
 using GetzTest.Domain.Entities;
@@ -28,6 +29,7 @@ public static class RegisterExtensions
         builder.Services.AddScoped<IJwtManager, JwtManager>();
         builder.Services.AddSingleton(new JwtKeyProvider("Keys/private.pem", "Keys/public.pem"));
         builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+        builder.Services.AddAuthorization();
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
         {
             var jwtSettingsSection = builder.Configuration.GetSection("JwtSettings");
@@ -69,6 +71,7 @@ public static class RegisterExtensions
         // FluentValidation
         builder.Services.AddScoped<IValidator<LoginCommand>, LoginValidator>();
         builder.Services.AddScoped<IValidator<RegisterCommand>, RegisterValidator>();
+        builder.Services.AddScoped<IAccountQueries, AccountQueries>();
 
         // Infrastructure layer
         builder.Services.AddScoped<IAccountRepository, AccountRepository>();

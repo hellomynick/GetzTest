@@ -70,11 +70,12 @@ public class AccountQueries : IAccountQueries
         {
             accountsDto.Add(new AccountDto
             {
+                Id = account.Id,
                 UserName = account.UserName,
                 Email = account.Email,
             });
         }
-        
+
         return new PagedResult<AccountDto>
         {
             Items = accountsDto,

@@ -17,7 +17,7 @@ public class AccountRepository : IAccountRepository
 
     public async Task CreateAsync(Account entity)
     {
-        _passwordHasher.HashPassword(entity, entity.Password);
+        entity.UpdatePassword(_passwordHasher.HashPassword(entity, entity.Password));
         await _applicationDbContext.Accounts.AddAsync(entity);
     }
 
@@ -80,7 +80,7 @@ public class AccountRepository : IAccountRepository
 
     public IQueryable<Account> GetAllAsync()
     {
-        return  _applicationDbContext.Accounts.AsQueryable();
+        return _applicationDbContext.Accounts.AsQueryable();
     }
 
 

@@ -18,7 +18,12 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapAccountApi();
 app.MapApiJwksV1();
 
 app.UseHttpsRedirection();
+
+app.Run();

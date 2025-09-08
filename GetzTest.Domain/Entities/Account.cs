@@ -20,6 +20,11 @@ public class Account
     public string Password { get; private set; }
     public bool IsDeleted { get; set; }
 
+    public void UpdatePassword(string newPassword)
+    {
+        Password = newPassword;
+    }
+
     public void AccountDelete()
     {
         IsDeleted = true;

@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "4151f996-771d-466f-b382-1348a393e242",
+		"name": "GetzTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22250507"
+	},
+	"item": [
+		{
+			"name": "Account Apis",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-idempotent-key",
+								"value": "dc1b3b17-9355-4d7a-9386-8d3000a3ea82",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test1@email.com\",\r\n    \"password\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5036/api/identity/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5036",
+							"path": [
+								"api",
+								"identity",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-idempotent-key",
+								"value": "ae8258dc-1e71-4553-a992-c5e75f4c9333",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test1@email.com\",\r\n    \"userName\": \"test\",\r\n    \"password\": \"test\",\r\n    \"confirmPassword\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5036/api/identity/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5036",
+							"path": [
+								"api",
+								"identity",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get public key",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-idempotent-key",
+								"value": "dc1b3b17-9355-4d7a-9386-8d3000a3ea83",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"khung123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5036/.well-known/jwks.json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5036",
+							"path": [
+								".well-known",
+								"jwks.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get openid-configuration",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-idempotent-key",
+								"value": "dc1b3b17-9355-4d7a-9386-8d3000a3ea83",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"khung123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5036/.well-known/openid-configuration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5036",
+							"path": [
+								".well-known",
+								"openid-configuration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Accounts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjEiLCJ0eXAiOiJKV1QifQ.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InRlc3QxQGVtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNzI2YmUzMmUtNGU0My00NWFmLWFjYmEtNDU3NjgzYmQwYzUyIiwiYXVkIjpbImlkZW50aXR5IiwiYmxvZ3NfcGxhdGZvcm0iXSwiZXhwIjoxNzU3MzI3ODgzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMzYifQ.Hd_09tKL5cYdp-Cv2L5MZd9vCInBgCB-Keq0Y2aWmRUw06O4b8PbYv-WrFo60R7atZAv3dhmEimZNfVyAPNPBU61O-K5OjEBDaIqZLzRvW0fzJnJm-jBU78M1smpw9pHYqe9EowP-0rORM3goD-JdjdkmdupxzdSXQMR5DNNbpx1yIAmAKAK19LkOLC8uarbi28cf1KLEyqse-cycXlwth5Jx_z02Io6wk9gidWbw63Hrpw26HJlbfk0mgf2BBWKAp9cEZz1dIxWVNP15iFtmPKS_pO_GbAhRwfywg-vTLRxuTl4JmNzGkD8FcMe9wvae3KB1Q2jzDuerG7uzmtNIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5036/api/identity/v1/accounts?pageNumber=1&pageSize=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5036",
+							"path": [
+								"api",
+								"identity",
+								"v1",
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Account Email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjEiLCJ0eXAiOiJKV1QifQ.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InRlc3QxQGVtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNzI2YmUzMmUtNGU0My00NWFmLWFjYmEtNDU3NjgzYmQwYzUyIiwiYXVkIjpbImlkZW50aXR5IiwiYmxvZ3NfcGxhdGZvcm0iXSwiZXhwIjoxNzU3MzI3ODgzLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwMzYifQ.Hd_09tKL5cYdp-Cv2L5MZd9vCInBgCB-Keq0Y2aWmRUw06O4b8PbYv-WrFo60R7atZAv3dhmEimZNfVyAPNPBU61O-K5OjEBDaIqZLzRvW0fzJnJm-jBU78M1smpw9pHYqe9EowP-0rORM3goD-JdjdkmdupxzdSXQMR5DNNbpx1yIAmAKAK19LkOLC8uarbi28cf1KLEyqse-cycXlwth5Jx_z02Io6wk9gidWbw63Hrpw26HJlbfk0mgf2BBWKAp9cEZz1dIxWVNP15iFtmPKS_pO_GbAhRwfywg-vTLRxuTl4JmNzGkD8FcMe9wvae3KB1Q2jzDuerG7uzmtNIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5036/api/identity/v1/accounts/by-email/test1@email.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5036",
+							"path": [
+								"api",
+								"identity",
+								"v1",
+								"accounts",
+								"by-email",
+								"test1@email.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

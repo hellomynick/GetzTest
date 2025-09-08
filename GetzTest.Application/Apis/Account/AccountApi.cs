@@ -27,7 +27,7 @@ public static class AccountApiExtensions
         group.MapGet("accounts", AccountApi.GetAccountsAsync);
         group.MapGet("accounts/{id:guid}", AccountApi.GetAccountAsync);
         group.MapGet("accounts/by-email/{email}", AccountApi.GetAccountByEmailAsync);
-        group.MapGet("accounts/by-name/{name}", AccountApi.GetAccountByEmailAsync);
+        group.MapGet("accounts/by-name/{name}", AccountApi.GetAccountByNameAsync);
 
         return group;
     }
@@ -95,5 +95,11 @@ public abstract class AccountApi
         [AsParameters] AccountsService accountsService, [FromRoute] string email)
     {
         return TypedResults.Ok(await accountsService.AccountQueries.GetAccountByEmailAsync(email));
+    }
+
+    public static async Task<Ok<AccountDto>> GetAccountByNameAsync(
+        [AsParameters] AccountsService accountsService, [FromRoute] string name)
+    {
+        return TypedResults.Ok(await accountsService.AccountQueries.GetAccountByNameAsync(name));
     }
 }
