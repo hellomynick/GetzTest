@@ -11,7 +11,7 @@ It includes authentication using **JWT** and uses **in-memory persistence** (no 
 - **ASP.NET Core Web API**
 - **Clean Architecture**
 - **EF Core InMemory Provider**
-- **JWT Authentication**
+- **JWT Authentication** use RSA algorithm
 - **xUnit + Moq** for unit testing
 
 ---
