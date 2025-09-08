@@ -1,0 +1,11 @@
+D:\Workspace\GetzTest\GetzTest.Domain\bin\Debug\net9.0\GetzTest.Domain.deps.json
+D:\Workspace\GetzTest\GetzTest.Domain\bin\Debug\net9.0\GetzTest.Domain.dll
+D:\Workspace\GetzTest\GetzTest.Domain\bin\Debug\net9.0\GetzTest.Domain.pdb
+D:\Workspace\GetzTest\GetzTest.Domain\obj\Debug\net9.0\GetzTest.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\GetzTest\GetzTest.Domain\obj\Debug\net9.0\GetzTest.Domain.AssemblyInfoInputs.cache
+D:\Workspace\GetzTest\GetzTest.Domain\obj\Debug\net9.0\GetzTest.Domain.AssemblyInfo.cs
+D:\Workspace\GetzTest\GetzTest.Domain\obj\Debug\net9.0\GetzTest.Domain.csproj.CoreCompileInputs.cache
+D:\Workspace\GetzTest\GetzTest.Domain\obj\Debug\net9.0\GetzTest.Domain.dll
+D:\Workspace\GetzTest\GetzTest.Domain\obj\Debug\net9.0\refint\GetzTest.Domain.dll
+D:\Workspace\GetzTest\GetzTest.Domain\obj\Debug\net9.0\GetzTest.Domain.pdb
+D:\Workspace\GetzTest\GetzTest.Domain\obj\Debug\net9.0\ref\GetzTest.Domain.dll

@@ -1,0 +1,15 @@
+D:\Workspace\GetzTest\GetzTest.Infrastructure\bin\Debug\net9.0\GetzTest.Infrastructure.deps.json
+D:\Workspace\GetzTest\GetzTest.Infrastructure\bin\Debug\net9.0\GetzTest.Infrastructure.dll
+D:\Workspace\GetzTest\GetzTest.Infrastructure\bin\Debug\net9.0\GetzTest.Infrastructure.pdb
+D:\Workspace\GetzTest\GetzTest.Infrastructure\bin\Debug\net9.0\GetzTest.Domain.dll
+D:\Workspace\GetzTest\GetzTest.Infrastructure\bin\Debug\net9.0\GetzTest.Domain.pdb
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\GetzTest.Infrastructure.csproj.AssemblyReference.cache
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\GetzTest.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\GetzTest.Infrastructure.AssemblyInfoInputs.cache
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\GetzTest.Infrastructure.AssemblyInfo.cs
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\GetzTest.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\GetzTest.594E28B3.Up2Date
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\GetzTest.Infrastructure.dll
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\refint\GetzTest.Infrastructure.dll
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\GetzTest.Infrastructure.pdb
+D:\Workspace\GetzTest\GetzTest.Infrastructure\obj\Debug\net9.0\ref\GetzTest.Infrastructure.dll
