@@ -92,3 +92,10 @@ Improve validation with FluentValidation.
 Add role-based authorization.
 
 Add CI/CD pipeline for automated testing.
+
+## Run project
+cd .\GetzTest.Application\
+dotnet run
+
+## Postman 
+go to folder docs/GetzTest.postman_collection.json
